@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="websocket.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+
+        <div id="wrapper">
+            <h1>EVE Mapper Home</h1>
+            <p>Welcome to the EVE Mapper Home.</p>
+            <br />
+            <div id="addDevice">
+                <div class="button"> <a href="#" OnClick="showForm()">Add a device</a> </div>
+                <form id="addDeviceForm">
+                    <h3>Add a new device</h3>
+                    <span>Name: <input type="text" name="device_name" id="device_name"></span>
+                    <span>Type: 
+                        <select id="device_type">
+                            <option name="type" value="Appliance">Appliance</option>
+                            <option name="type" value="Electronics">Electronics</option>
+                            <option name="type" value="Lights">Lights</option>
+                            <option name="type" value="Other">Other</option>
+                        </select></span>
+
+                    <span>Description:<br />
+                        <textarea name="description" id="device_description" rows="2" cols="50"></textarea>
+                    </span>
+
+                    <input type="button" class="button" value="Add" onclick=formSubmit()>
+                    <input type="reset" class="button" value="Cancel" onclick=hideForm()>
+                </form>
+            </div>
+            <div>
+                <a href="https://login.eveonline.com/oauth/authorize/?response_type=code&redirect_uri=http://localhost:8080/evemapper/NewServlet&client_id=43f56ef82a134d90ad08ae28e1ecfe15">
+                    <img src="img/eve-sso-login-white-large.png"/>
+                </a>
+                    
+                
+                <!--<input type="image" src="img/eve-sso-login-white-large.png" OnClick="onLogin();"/> -->
+            </div>
+            <br />
+            <h3>Currently connected devices:</h3>
+            <div id="content">
+            </div>
+        </div>
+
+    </body>
+</html>
